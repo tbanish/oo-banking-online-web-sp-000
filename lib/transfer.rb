@@ -18,9 +18,9 @@ class Transfer
       sender.balance -= amount
       receiver.balance += amount
       @status = "complete"
-    elsif sender.valid? != true
+    elsif sender.blanace < sender.amount
       @status = "rejected"
-      rejection
+      
     end
   end
 
