@@ -21,8 +21,9 @@ class Transfer
       @status = "complete"
     elsif sender.balance < amount
       @status = "rejected"
-      "Transaction rejected. Please check your account balance."
+      statement = "Transaction rejected. Please check your account balance."
     end
+    statement
   end
 
   
