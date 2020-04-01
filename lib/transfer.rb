@@ -17,7 +17,7 @@ class Transfer
       sender.balance -= amount
       receiver.balance += amount
       @status = "complete"
-    elsif(sender.balance < amount) || (sender.close_account) || (receiver.close_account)
+    elsif !sender.valid? || sender.close_account || receiver.close_account
       @status = "rejected"
       "Transaction rejected. Please check your account balance."
     end 
